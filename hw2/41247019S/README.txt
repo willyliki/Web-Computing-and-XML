@@ -1,5 +1,4 @@
-使用說明
-將整個資料夾上傳到 W3Schools Spaces 或任何靜態網站主機（GitHub Pages, Netlify）。
+41247019S-hw2
 首頁: index.html
 其他頁面: resume.html, graphics.html, contact.html
 XML: resume.xml (可下載)
