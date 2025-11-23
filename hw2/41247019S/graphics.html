@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SVG / Canvas 範例</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">立錡的作品集</a></h1>
+      <nav aria-label="主導覽">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="resume.html">履歷 (resume.xml)</a></li>
+          <li><a href="graphics.html">SVG / Canvas</a></li>
+          <li><a href="contact.html">聯絡表單</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>SVG 範例</h2>
+    <p>下面使用 <code>&lt;svg&gt;</code> 繪製一個可縮放的向量圖：</p>
+
+    <svg role="img" aria-label="向量示意圖：漸層圓與標籤" width="100%" height="240" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#0b5cff"/>
+          <stop offset="100%" stop-color="#57d2ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="#f6fbff"/>
+      <circle cx="120" cy="120" r="80" fill="url(#g1)" />
+      <text x="220" y="120" font-size="20" fill="#07304a" dominant-baseline="middle">SVG：漸層圓</text>
+    </svg>
+
+    <h2>Canvas 範例 (互動)</h2>
+    <p>下面使用 &lt;canvas&gt; 繪製一個可按按鈕改變顏色的圓：</p>
+
+    <canvas id="demoCanvas" width="600" height="240" role="img" aria-label="可互動畫布，按按鈕會改變圓的顏色"></canvas>
+    <p>
+      <button id="colorBtn">變更顏色</button>
+    </p>
+
+    <script>
+      const canvas = document.getElementById('demoCanvas');
+      const ctx = canvas.getContext('2d');
+      let color = '#ff8a65';
+      function draw(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = color;
+        ctx.beginPath(); ctx.arc(150,120,80,0,Math.PI*2); ctx.fill();
+        ctx.font = '18px sans-serif';
+        ctx.fillStyle = '#07304a';
+        ctx.fillText('Canvas 圓形', 260, 125);
+      }
+      document.getElementById('colorBtn').addEventListener('click', ()=>{
+        color = color === '#ff8a65' ? '#8bc34a' : '#ff8a65';
+        draw();
+      });
+      draw();
+    </script>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 立錡 林</p>
+    </div>
+  </footer>
+</body>
+</html>

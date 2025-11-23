@@ -1,0 +1,46 @@
+/* 基本排版與 RWD */
+:root{
+  --brand:#0b5cff;
+  --bg:#ffffff;
+  --text:#212121;
+  --muted:#666;
+  --gap:1rem;
+  font-size:16px;
+}
+*{box-sizing:border-box}
+body{
+  font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+  margin:0;
+  padding:0;
+}
+.container{max-width:1000px;margin:0 auto;padding:1rem;}
+.site-header{background:linear-gradient(90deg,var(--brand),#2871ff);color:white;padding:0.75rem 0;}
+.site-header a{color:inherit;text-decoration:none}
+.site-header h1{margin:0;font-size:1.25rem}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+nav a:focus, a:focus{outline:3px solid #ffbf47; outline-offset:2px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+figure{margin:0;background:#fff;border:1px solid #ddd;padding:0.5rem;border-radius:8px}
+figure img{width:100%;height:auto;display:block;border-radius:4px}
+table{width:100%;border-collapse:collapse;margin-top:0.5rem}
+th,td{border:1px solid #ddd;padding:0.5rem;text-align:left}
+caption{font-weight:700;margin-bottom:0.5rem}
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{left:0;top:0;width:auto;height:auto;padding:0.5rem;background:#000;color:#fff;z-index:1000}
+
+footer{background:#f4f4f4;padding:1rem;margin-top:1rem;text-align:center;color:var(--muted)}
+
+/* Accessibility: sufficient contrast for links */
+a{color:var(--brand)}
+
+/* Responsive rules */
+@media (max-width:700px){
+  .site-header{padding:0.5rem}
+  nav ul{flex-wrap:wrap;gap:0.5rem}
+  .container{padding:0.75rem}
+}

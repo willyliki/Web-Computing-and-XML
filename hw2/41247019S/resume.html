@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>履歷 — resume.xml</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主內容</a>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">立錡的作品集</a></h1>
+      <nav aria-label="主導覽">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="resume.html">履歷</a></li>
+          <li><a href="graphics.html">SVG / Canvas</a></li>
+          <li><a href="contact.html">聯絡表單</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h2>我的履歷</h2>
+    <p>下方以 &lt;pre&gt; 顯示 XML 原始檔案，並提供下載與連結：</p>
+
+    <p>
+      <a href="resume.xml" download>下載 resume.xml</a> |
+      <a href="resume.xml" aria-label="在新分頁開啟履歷 XML" target="_blank" rel="noopener">在新分頁開啟 XML</a>
+    </p>
+
+    <section aria-labelledby="xmlview">
+      <h3 id="xmlview">XML 原始檔案</h3>
+      <pre style="background:#f7f7f7;border:1px solid #ddd;padding:1rem;overflow:auto;" tabindex="0">
+<?xml version="1.0" encoding="UTF-8"?>
+&lt;resume&gt;
+  &lt;name&gt;立錡 林&lt;/name&gt;
+  &lt;contact&gt;
+    &lt;email&gt;41247019s@gapps.ntnu.edu.tw&lt;/email&gt;
+    &lt;phone&gt;+886-912-345-678&lt;/phone&gt;
+  &lt;/contact&gt;
+  &lt;education&gt;
+    &lt;degree&gt;National Taiwan Normal University - Computer Science and Information Engineering&lt;/degree&gt;
+    &lt;period&gt;2023 - present&lt;/period&gt;
+  &lt;/education&gt;
+&lt;/resume&gt;
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 立錡 林</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <name>林立錡</name>
+  <contact>
+    <email>41247019s@gapps.ntnu.edu.tw</email>
+    <phone>+886-912-345-678</phone>
+  </contact>
+  <education>
+    <degree>National Taiwan Normal University - Computer Science and Information Engineering</degree>
+    <period>2023 - present</period>
+  </education>
+  <skills>
+    <skill name="C">advanced</skill>
+    <skill name="HTML/CSS">advanced</skill>
+    <skill name="p5.js">intermediate</skill>
+  </skills>
+  <projects>
+    <project>
+      <title>財務管理應用程式</title>
+      <skill>React, Firebase, Google OAuth</skill>
+      <desc>開發一個可記錄收支與圖表分析的網頁應用。</desc>
+    </project>
+    <project>
+      <title>MIDI 編輯器</title>
+      <skill>C, MIDI Library</skill>
+      <desc>實作能讀取與修改 MIDI 檔的編輯工具，支援音高、速度與節拍修改。</desc>
+    </project>
+  </projects>
+</resume>
