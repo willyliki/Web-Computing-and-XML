@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>我的作品集 — 首頁</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主內容</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1><a href="index.html">立錡的作品集</a></h1>
+      <nav role="navigation" aria-label="主導覽">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="resume.html">履歷</a></li>
+          <li><a href="graphics.html">SVG / Canvas</a></li>
+          <li><a href="contact.html">聯絡表單</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section aria-labelledby="intro">
+      <h2 id="intro">歡迎</h2>
+      <p>這是41247019S 林立錡 網路計算與XML hw2的網站，包含圖形、圖片、超連結、表格、表單與多媒體。</p>
+    </section>
+
+    <section aria-labelledby="gallery">
+      <h2 id="gallery">作品縮圖</h2>
+      <div class="grid">
+        <!-- inline SVG used as decorative image (has role) -->
+        <figure>
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='240'><rect width='100%' height='100%' fill='%23e8f4ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='%23355'>作品 1</text></svg>" alt="作品一縮圖">
+          <figcaption>專案：演算法視覺化</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photo1.png" alt="作品二縮圖">
+          <figcaption>專案：Computer Graphic</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="table">
+      <h2 id="table">技能表</h2>
+      <table>
+        <caption>技術與熟悉程度</caption>
+        <thead>
+          <tr><th scope="col">技術</th><th scope="col">熟悉度</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">C</th><td>高</td></tr>
+          <tr><th scope="row">JavaScript / p5.js</th><td>中</td></tr>
+          <tr><th scope="row">HTML / CSS</th><td>高</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="links">
+      <h2 id="links">外部資源</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools (教學 & host 建議)</a></li>
+        <li><a href="resume.html">查看我的履歷 (resume.xml)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© 2025 立錡 林 • 範例網站</p>
+    </div>
+  </footer>
+</body>
+</html>

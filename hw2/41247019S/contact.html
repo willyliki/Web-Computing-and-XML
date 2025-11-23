@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>聯絡我</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">立錡的作品集</a></h1>
+      <nav aria-label="主導覽">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="resume.html">履歷</a></li>
+          <li><a href="graphics.html">SVG / Canvas</a></li>
+          <li><a href="contact.html">聯絡表單</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>聯絡表單</h2>
+    <form action="#" method="post" aria-label="聯絡表單範例">
+      <div>
+        <label for="name">姓名</label><br>
+        <input id="name" name="name" required aria-required="true">
+      </div>
+      <div>
+        <label for="email">電子郵件</label><br>
+        <input id="email" name="email" type="email" required aria-required="true">
+      </div>
+      <div>
+        <label for="message">訊息</label><br>
+        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+      </div>
+      <p>
+        <button type="submit">送出</button>
+        <button type="reset">重填</button>
+      </p>
+    </form>
+
+    <section aria-labelledby="multimedia">
+      <h3 id="multimedia">嵌入多媒體 (示範)</h3>
+      <p>這裡使用可控制的 HTML5 視頻元件（範例為空，請替換 src 為實際檔案）：</p>
+      <video controls width="100%" aria-label="示範視頻（請替換來源）">
+        <source src="" type="video/mp4">
+        您的瀏覽器不支援影片播放。
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 立錡 林</p>
+    </div>
+  </footer>
+</body>
+</html>
