@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>XML Viewer 實作範例</title>
+    <script>
+        // 載入 XML 或 XSL 檔案的通用函式
+        async function loadXMLDoc(filename) {
+            const response = await fetch(filename);
+            const text = await response.text();
+            return new DOMParser().parseFromString(text, "text/xml");
+        }
+
+        async function init() {
+            try {
+                // 1. 載入 XML 資料
+                const xml = await loadXMLDoc("ex.xml");
+                
+                // 2. DOM 操作：直接讀取 XML 節點顯示摘要
+                const summary = xml.getElementsByTagName("摘要")[0].childNodes[0].nodeValue;
+                document.getElementById("xslhead").innerHTML = "<h1>產品搜尋結果</h1><p><b>摘要:</b> " + summary + "</p>";
+
+                // 3. 預設執行轉換
+                transform(xml, "ex1.xsl");
+            } catch (err) {
+                console.error("Error:", err);
+                alert("請使用 Live Server 或本地伺服器開啟此檔案以避免 CORS 錯誤。");
+            }
+        }
+
+        async function transform(xmlDoc, xslFile) {
+            // 載入 XSL
+            const xsl = await loadXMLDoc(xslFile);
+
+            // 執行轉換 (Chrome/Edge/Firefox 標準寫法)
+            if (window.XSLTProcessor) {
+                const xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                const resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+                
+                // 清空舊結果並插入新結果
+                const resultDiv = document.getElementById("xslresult");
+                resultDiv.innerHTML = "";
+                resultDiv.appendChild(resultDocument);
+            }
+        }
+
+        // 綁定按鈕事件
+        async function reloadWithXSL() {
+             const xml = await loadXMLDoc("ex.xml");
+             transform(xml, "ex1.xsl");
+        }
+    </script>
+</head>
+<body onload="init();" style="font-family: Arial; padding: 20px;">
+    <div id="xslhead"></div>
+    <hr>
+    
+    <button onclick="reloadWithXSL()">重新載入並排序</button>
+    <button onclick="alert(document.body.innerHTML)">檢視 HTML 原始碼</button>
+    
+    <hr>
+    <div id="xslresult"></div>
+</body>
+</html>
